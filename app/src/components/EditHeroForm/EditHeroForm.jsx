@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import s from "./EditHeroForm.module.css";
 import { nanoid } from "nanoid";
@@ -13,6 +13,7 @@ function EditHeroForm({ data, string }) {
   const [catchPhrase, setCatchPhrase] = useState("");
   const [images, setImages] = useState(null);
   const [filteredImages, setFilteredImages] = useState(null);
+  const formRef = useRef(null)
 
   useEffect(() => {
     setFilteredImages(data.images);
@@ -28,6 +29,15 @@ function EditHeroForm({ data, string }) {
     });
   };
 
+  const reset = () => {
+    setNickname('')
+    setRealName('')
+    setOriginDescription('')
+    setSuperpowers('')
+    setCatchPhrase('')
+    formRef.current.reset()
+}
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,7 +52,9 @@ function EditHeroForm({ data, string }) {
     try {
       const response = await axios.patch(string, data);
       console.log(response);
-      return alert('chenges are accepted! Reload page to see them')
+      alert('changes are accepted! Reload page to see them')
+      
+      return reset()
     } catch (err) {
       console.log(err.message);
     }
@@ -56,8 +68,9 @@ function EditHeroForm({ data, string }) {
       <form
         onSubmit={handleSubmit}
         encType="multipart/form-data"
-        className={s.form}>
-            <label>choose new nickname of the hero</label>
+        className={s.form}
+        ref={formRef}>
+        <label>choose new nickname of the hero</label>
         <input
           type="text"
           value={nickname}

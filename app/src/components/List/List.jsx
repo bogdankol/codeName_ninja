@@ -38,9 +38,9 @@ function List() {
                         <button type="button" onClick={(async() => {
                             await axios.delete(`http://localhost:5000/api/supers/${hero.nickname}`)
                             setHeroes(prev => prev.filter(el => el.nickname != hero.nickname))
-                            })}>delete hero
+                            })}>Delete hero
                         </button>
-                        <button type="button" onClick={(e) => onDetailsButtonHandler(e, hero)}>Hreo details</button>
+                        <button type="button" onClick={(e) => onDetailsButtonHandler(e, hero)}>Hero details</button>
                     </li>
                     )
                 })}

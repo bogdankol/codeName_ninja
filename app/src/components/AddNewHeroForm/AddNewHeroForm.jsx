@@ -14,6 +14,7 @@ function AddNewHeroForm() {
     const originDescriptionRef = useRef(null)
     const superpowersRef = useRef(null)
     const catchPhraseRef = useRef(null)
+    const formRef = useRef(null);
 
     const validationData = (data, refs) => {
         if(!data.nickname) return refs.nicknameRef.current.focus()
@@ -23,6 +24,15 @@ function AddNewHeroForm() {
         if(!data.catchPhrase) return refs.catchPhraseRef.current.focus()
         if(!data.images) return alert('choose a heroic image of the heroic hero')
         return true
+    }
+
+    const reset = () => {
+        setNickname('')
+        setRealName('')
+        setOriginDescription('')
+        setSuperpowers('')
+        setCatchPhrase('')
+        formRef.current.reset()
     }
 
     const handleSubmit = async (e) => {
@@ -48,6 +58,8 @@ function AddNewHeroForm() {
         try {
             await axios.post("http://localhost:5000/api/supers", data)
             alert('Hero has been created! You can see it in *Heroes* page')
+            reset()
+            return
         } catch(err) {
             console.log(err.message)
             alert(err.message)
@@ -58,7 +70,7 @@ function AddNewHeroForm() {
         <br />
         This form will help you to create a new superhero.
         <div className={s.mainDiv}>
-            <form onSubmit={handleSubmit} encType="multipart/form-data" className={s.form}>
+            <form ref={formRef} onSubmit={handleSubmit} encType="multipart/form-data" className={s.form}>
                 <label>Choose hero's nickname</label>
                 <input type="text" ref={nicknameRef} value={nickname} onChange={(e) => setNickname(e.currentTarget.value)}></input>
                 <label>Choose hero's real name</label>
