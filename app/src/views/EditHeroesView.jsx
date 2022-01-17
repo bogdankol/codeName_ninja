@@ -7,7 +7,7 @@ import s from './EditHeroesView.module.css';
 function EditHeroesView() {
     const [addHeroNeeded, setAddHeroNeeded] = useState('');
     const [firstBtnClasses, setFirstBtnClasses] = useState(s.btn)
-    const [secondBtnClasses, setSecondBtnClasses] = useState(s.btn)
+    const [secondBtnClasses, setSecondBtnClasses] = useState(s.active)
 
     return (
         <div>

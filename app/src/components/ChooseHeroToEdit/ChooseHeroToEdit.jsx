@@ -33,7 +33,7 @@ function ChooseHeroToEdit() {
             Write hero's nickname here:
             <form onSubmit={submitHandler}>
                 <input type="text" value={input} onChange={ e => (setInput(e.currentTarget.value))}></input>
-                <button type="submit">check hero avaibility</button>
+                <button type="submit">check hero availability</button>
             </form>
             {string && <EditHeroForm data={hero} string={string} />}
         </div>
