@@ -1,0 +1,36 @@
+.div {
+    display: flex;
+    padding: 30px 100px 100px;
+    margin: 0 auto;
+    width: 100vw;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.listItem {
+    margin: 0 10px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+.listInnerDiv {
+    width: 250px;
+}
+.img {
+    display: block;
+    max-width: 250px;
+    height: 250px;
+}
+.btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: coral;
+    font-size: 18px;
+}

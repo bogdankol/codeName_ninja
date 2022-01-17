@@ -1,0 +1,20 @@
+.nav {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: underline;
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
+  margin-right: 12px;
+}
+.activeLink {
+  color: #e84a5f;
+}
