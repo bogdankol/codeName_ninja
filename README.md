@@ -5,14 +5,14 @@ I decided that this would be a local app thus I didn't put it into Netlify or He
 
 
 These are the steps to run app:
-1) open *server* folder in separate code-editor window. In terminal write `pwd` to be sure
-    that you're in server folder. write there *npm i* - that would install all the packages needed for server.
+1) open "*server*" folder in separate code-editor window. In terminal write `pwd` to be sure
+    that you're in server folder. write there "*npm i*" - that would install all the packages needed for server.
 2) write in terminal *npm run start:dev* to lunch server. When it write 
-        *Database connection successful
-        Server running on port: 5000*
+        "*Database connection successful
+        Server running on port: 5000*"
         that means that server is on.
-3) open separate code-editor window for *app* folder. In terminal write `pwd` to be sure
-    that you're in app folder. write there *npm i* - that would install all the packages needed for app.
+3) open separate code-editor window for "*app*" folder. In terminal write `pwd` to be sure
+    that you're in app folder. write there "*npm i*" - that would install all the packages needed for app.
 4) write *npm start* to run app. It would take some time for app to build and run.
 5) when its done - separate browser tab would open - it is our app.
 6) on top of it you can see two underlined links - these are links for pages.
