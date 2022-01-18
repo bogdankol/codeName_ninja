@@ -7,7 +7,7 @@ I decided that this would be a local app thus I didn't put it into Netlify or He
 These are the steps to run app:
 1) open "*server*" folder in separate code-editor window. In terminal write `pwd` to be sure
     that you're in server folder. write there "*npm i*" - that would install all the packages needed for server.
-1-2) Look through ".env-example" - you must create your own ".env" file for server to run and to access database.
+1-2) Look through ".env-example" - you must create your own ".env" file for server to run and to access database. By default the app's port should be 5000, if you want it to be different - don't forget to make appropriate changes in "app" files
 2) write in terminal *npm run start:dev* to lunch server. When it writes 
         "*Database connection successful
         Server running on port: 5000*"
